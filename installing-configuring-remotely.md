@@ -106,3 +106,7 @@ Use the following command to build the environment (**pay attention to run this 
 ```
 docker-compose up -d
 ```
+
+<br/>
+
+**NOTE:** I advice to reboot the server at this point.
