@@ -3,6 +3,7 @@
 ## Creating a VM
 You can use any cloud (or local) host to create suitable VM with good specifications (especially in CPU power).
 - You should allow inbound connection on ports 80, 81 and 443
+- Make sure that the external ip address is a static ip address.
 
 ## Installing Docker and Docker-Compose
 Use the following shell script to install them
@@ -51,7 +52,7 @@ sudo usermod -aG docker husam
     - Nginx proxy manager. 
     - Mariadb database server (required by Nginx proxy manager).
     - Remotely app. 
-- Please **change critical information like passwords to more complicated ones**.
+- Please **change critical information like passwords to be more complicated**.
 
 - Copy the content of the following code to a file with the name: **docker-compose.yml**
 ```
