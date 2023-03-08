@@ -47,7 +47,13 @@ sudo usermod -aG docker husam
 <br/>
 
 ## Using the docker compose to build the environment
-Copy the content of the following code to a file with the name: **docker-compose.yml**
+- The following script will create three container (in one virtual network): 
+    - Nginx proxy manager. 
+    - Mariadb database server (required by Nginx proxy manager).
+    - Remotely app. 
+- Please **change critical information like passwords to more complicated ones**.
+
+- Copy the content of the following code to a file with the name: **docker-compose.yml**
 ```
 version: "3"
 services:
@@ -93,4 +99,9 @@ services:
       - '5000:5000'
     volumes:
       - /var/www/remotely:/remotely-data
+```
+
+Use the following command to build the environment (**pay attention to run this command in the same folder as the docker-compose.yml file exist**):
+```
+docker-compose up -d
 ```
