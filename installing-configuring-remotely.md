@@ -47,6 +47,10 @@ sudo usermod -aG docker husam
 
 <br/>
 
+**NOTE:** I advice to reboot the server at this point.
+
+<br/>
+
 ## Using the docker compose to build the environment
 - The following script will create three container (in one virtual network): 
     - Nginx proxy manager. 
@@ -109,4 +113,3 @@ docker-compose up -d
 
 <br/>
 
-**NOTE:** I advice to reboot the server at this point.
