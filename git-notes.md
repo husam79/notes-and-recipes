@@ -3,8 +3,8 @@
 ```
 git reset --hard
 ```
-
 <br/>
+
 
 This command will reset all modified files (which added previously to the repository) to last commit state.
 
