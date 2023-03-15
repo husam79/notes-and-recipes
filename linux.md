@@ -19,3 +19,5 @@ Example:
 ```
 scp -i ledger-app-vm_key.pem ./about.png husam@id_address:~/about.png
 ```
+
+Note: If the authentication method to a server is by using a password (instead of a key) then this command will prompt you to enter username and password as you used to do in normal ssh client.
