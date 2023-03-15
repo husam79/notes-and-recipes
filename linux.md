@@ -1,8 +1,16 @@
-## Linux Commands
-- sudo usermod -a -G examplegroup exampleusername //adding an exampleusername to a group: examplegroup
-- rm -rf dir1 //to remove a directory with all content inside it
+# Linux Commands
 
-# Copy files from current machine to remote machine (ssh)
+## Adding an exampleusername to a group: examplegroup
+```
+sudo usermod -a -G examplegroup exampleusername 
+```
+
+## Removing a folder with all contents inside it
+```
+rm -rf dir1
+```
+
+## Copy files from current machine to remote machine (ssh)
 ```
 scp -i [pem file if exists] [src_file] [user]@[remote_server_address]:[dest_file_location_with_filename] 
 ```
@@ -10,5 +18,4 @@ scp -i [pem file if exists] [src_file] [user]@[remote_server_address]:[dest_file
 Example:
 ```
 scp -i ledger-app-vm_key.pem ./about.png husam@id_address:~/about.png
-
-
+```
