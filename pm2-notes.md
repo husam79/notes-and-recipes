@@ -9,3 +9,19 @@ For example if the .env in the current folder, but the app.js file in the dist f
 pm2 start ./dist/app.js
 ```
 This will ensure that the application that is in the app.js will find the .env file.
+
+# Restart apps
+pm2 restart all
+pm2 restart app-name
+
+# Display all apps logs in realtime
+pm2 logs
+
+# Display only `api` application logs
+pm2 logs api
+
+# Display new logs in json
+pm2 logs --json
+
+# Display 1000 lines of api log file
+pm2 logs big-api --lines 1000
