@@ -30,6 +30,7 @@ sudo useradd -m new_user
 ```
 
 **Note 1:** If you ommit the -m directive, the user will be created without a home director.
+<br />
 **Note 2:** If you use the -r directive, with this command, you will create a **system user**.
 
 ### Assigning a password for a user
