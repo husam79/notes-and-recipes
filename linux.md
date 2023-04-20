@@ -51,4 +51,9 @@ sudo userdel some_user
 
 **Note:** If you want to remove the home directory for the some_user you need to add the **-r** directive to the previous command.
 
-
+### Display the size of a directory
+```
+sudo du -sh [path-to-the-folder]
+```
+s: Display only the total size of the specified directory, do not display file size totals for subdirectories.
+h: Print sizes in a human-readable format.
