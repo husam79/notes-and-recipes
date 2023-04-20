@@ -50,7 +50,7 @@ sudo userdel some_user
 ```
 
 **Note:** If you want to remove the home directory for the some_user you need to add the **-r** directive to the previous command.
-
+<br />
 ### Display the size of a directory
 ```
 sudo du -sh [path-to-the-folder]
