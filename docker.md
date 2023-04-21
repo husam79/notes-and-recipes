@@ -83,6 +83,12 @@ docker rmi $(docker images -q)
 ```
 Removing all images.
 
+<br/>
+
+```
+docker network prune
+```
+This will remove all custom networks not used by at least one container.
 
 <br />
 
