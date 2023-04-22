@@ -11,17 +11,28 @@ pm2 start ./dist/app.js
 This will ensure that the application that is in the app.js will find the .env file.
 
 # Restart apps
+```
 pm2 restart all
 pm2 restart app-name
-
+```
+<br />
 # Display all apps logs in realtime
+```
 pm2 logs
-
+```
+<br />
 # Display only `api` application logs
+```
 pm2 logs api
-
+```
+<br />
 # Display new logs in json
+```
 pm2 logs --json
-
+```
+<br />
 # Display 1000 lines of api log file
+```
 pm2 logs big-api --lines 1000
+```
+<br />
