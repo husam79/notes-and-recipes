@@ -36,3 +36,7 @@ pm2 logs --json
 pm2 logs big-api --lines 1000
 ```
 
+# Restart an app with a specific id and rename it in one command
+```
+pm2 restart [id] --name [new-name]
+```
