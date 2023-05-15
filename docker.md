@@ -119,6 +119,11 @@ You can use "host.docker.internal" as internal host address like "localhost but 
 for example:
 http://host.docker.internal:3000 <=> http://localhost:3000 (localhost here is for the hosting machine as I mentioned)
 
+# Nginx Docker Container Configuration
+
+## Static files served by the nginx container
+This content should be placed in the `/usr/share/nginx/html` in the docker container.
+
 ## A sample file for nginx configuration file in a docker container
 the following configuration sample supposes that this nginx container communicate with external service (not a docker container) located on the same hosting machine (this is why we use the address: http://host.docker.internal:3000).
 
@@ -175,4 +180,8 @@ server {
 }
 
 ```
-
+## Restart nginx to make previous changes takes effect
+```
+sudo docker exec nginx-base nginx -t
+sudo docker exec nginx-base nginx -s reload
+```
