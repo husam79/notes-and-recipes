@@ -121,6 +121,9 @@ http://host.docker.internal:3000 <=> http://localhost:3000 (localhost here is fo
 
 ## A sample file for nginx configuration file in a docker container
 the following configuration sample supposes that this nginx container communicate with external service (not a docker container) located on the same hosting machine (this is why we use the address: http://host.docker.internal:3000).
+
+This file is located in /etc/nginx/conf.d/default.conf in the docker container.
+
 ```
 server {
     listen       80;
