@@ -120,6 +120,9 @@ for example:
 http://host.docker.internal:3000 <=> http://localhost:3000 (localhost here is for the hosting machine as I mentioned)
 
 # Nginx Docker Container Configuration
+Usefull links: 
+- [The server side blog](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Docker-Nginx-reverse-proxy-setup-example)
+- [How to Use the NGINX Docker Official Image](https://www.docker.com/blog/how-to-use-the-official-nginx-docker-image/)
 
 ## Static files served by the nginx container
 This content should be placed in the `/usr/share/nginx/html` in the docker container.
