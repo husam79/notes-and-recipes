@@ -125,7 +125,7 @@ Usefull links:
 - [How to Use the NGINX Docker Official Image](https://www.docker.com/blog/how-to-use-the-official-nginx-docker-image/)
 
 ## Static files served by the nginx container
-This content should be placed in the `/usr/share/nginx/html` in the docker container.
+This content should be placed in the `/usr/share/nginx/html` in the docker container.   
 **Note**: you can use the following command to copy the contents of the following folder to the `/usr/share/nginx/html` directory in the `nginx-container`:
 ```
 docker cp ./ nginx-container:/usr/share/nginx/html
