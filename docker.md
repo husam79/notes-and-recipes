@@ -126,6 +126,10 @@ Usefull links:
 
 ## Static files served by the nginx container
 This content should be placed in the `/usr/share/nginx/html` in the docker container.
+Note: you can use the following command to copy the contents of the following folder to the `/usr/share/nginx/html` directory in the `nginx-container:
+```
+docker cp ./ nginx-container:/usr/share/nginx/html
+```
 
 ## A sample file for nginx configuration file in a docker container
 the following configuration sample supposes that this nginx container communicate with external service (not a docker container) located on the same hosting machine (this is why we use the address: http://host.docker.internal:3000).
