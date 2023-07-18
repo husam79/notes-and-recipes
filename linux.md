@@ -57,3 +57,8 @@ sudo du -sh [path-to-the-folder]
 ```
 s: Display only the total size of the specified directory, do not display file size totals for subdirectories.
 h: Print sizes in a human-readable format.
+
+### Find the home directory path of a user
+```
+echo ~username
+```
