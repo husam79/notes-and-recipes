@@ -1,0 +1,17 @@
+#! /bin/bash
+
+YMD=$(date "+%Y%m%d-%H%M%S")
+
+pg_dump -U postgres [DB_NAME] > [Path]/backup_file_$YMD.bak
+
+git -C [Path] add .
+git -C [Path] commit -m "$YMD"
+git -C [Path] push
+
+# removing the old database
+psql -c "SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = 'DB_NAME'"
+psql -c "DROP DATABASE IF EXISTS \"DB_NAME\"" 
+psql -c "CREATE DATABASE \"DB_NAME\" WITH OWNER = postgres ENCODING = 'UTF8' CONNECTION LIMIT = -1 IS_TEMPLATE = FALSE;"
+
+# restoring the current database backup to the clean database
+psql -U postgres -d [DB_NAME] -f [Path]/backup_file_$YMD.bak
