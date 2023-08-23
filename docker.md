@@ -110,17 +110,32 @@ This will remove all custom networks not used by at least one container.
 
 ## Notes
 - The difference between run and start commands is that: the run command create a new container from an image, whereas the start container runs a previously stopped container.
-- Docker images is a set of layers. The lower layer is the operating system layer (normally it is linux alpain because it is lightweight),  and the top most one is the app layer. And there are a number of other layers (service layers).
-- All the data in the container will lost, if the container is restarted.
+- Docker images are a set of layers. The lower layer is the operating system layer (normally it is linux alpain because it is lightweight),  and the topmost one is the app layer. And there are a number of other layers (service layers).
+- All the data in the container will be lost if the container is restarted.
 
 ## The internal host address
-You can use "host.docker.internal" as internal host address like "localhost but for the machine that host this docker container. You can use this address inside a configuration file for nginx for example to refer to the machine local address.
+You can use "host.docker.internal" as an internal host address like "localhost but for the machine that host this docker container. You can use this address inside a configuration file for nginx for example to refer to the machine's local address.
 
 for example:
 http://host.docker.internal:3000 <=> http://localhost:3000 (localhost here is for the hosting machine as I mentioned)
 
+## Make a docker container running permanently
+This explanation will be for a python docker container, similar steps can be done for other containers.
+
+- Pull the latest Python image:
+```
+docker pull python
+```
+- Running a container from the pulled image:
+```
+docker run -d -t --name running-python -v ~/selected-volume:/usr/src/app python
+```
+In the previous command, I named the running container "running-python", and mount the directory "/usr/src/app" on "~/selected-volume" 
+
+- From the docker desktop app, you can click the running container, and then go to the terminal tab to execute commands interactively.
+
 # Nginx Docker Container Configuration
-Usefull links: 
+Useful links: 
 - [The server side blog](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Docker-Nginx-reverse-proxy-setup-example)
 - [How to Use the NGINX Docker Official Image](https://www.docker.com/blog/how-to-use-the-official-nginx-docker-image/)
 
