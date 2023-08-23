@@ -100,7 +100,7 @@ This will remove all custom networks not used by at least one container.
 |8|docker network ls| List all available networks in docker |
 |9|docker network create [network-name]| creating a new network named “network-name” |
 |10|docker network connect [network-name] [container-name OR container-id] | Assigning a network to an existing container **NOTE:** you can assign a network directly to an container when first run it using the following command: docker run --network [network-name] [image-name]|
-|11|docker build -t [new-img-name]:[tag] .| Building a new docker image based on the Dockerfile founded in the currenc directory |
+|11|docker build -t [new-img-name]:[tag] .| Building a new docker image based on the Dockerfile founded in the current directory |
 
 ## docker composer commands
 |#|Command|Description|
@@ -130,7 +130,7 @@ docker pull python
 ```
 docker run -d -t --name running-python -v ~/selected-volume:/usr/src/app python
 ```
-In the previous command, I named the running container "running-python", and mount the directory "/usr/src/app" on "~/selected-volume" 
+In the previous command, I named the running container "running-python", and mount the directory "/usr/src/app" (from the running container) on "~/selected-volume" (from the host machine)
 
 - From the docker desktop app, you can click the running container, and then go to the terminal tab to execute commands interactively.
 
@@ -148,8 +148,8 @@ This content should be placed in the `/usr/share/nginx/html` in the docker conta
 docker cp ./ nginx-container:/usr/share/nginx/html
 ```
 
-## A sample file for nginx configuration file in a docker container
-the following configuration sample supposes that this nginx container communicate with external service (not a docker container) located on the same hosting machine (this is why we use the address: http://host.docker.internal:3000).
+## A sample file for the nginx configuration file in a docker container
+the following configuration sample supposes that this nginx container communicates with an external service (not a docker container) located on the same hosting machine (this is why we use the address: http://host.docker.internal:3000).
 
 **This file is located in `/etc/nginx/conf.d/default.conf` in the docker container.**
 
