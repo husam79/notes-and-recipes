@@ -24,14 +24,14 @@ running a container with a specified [img-name]:[tag]
 ```
 docker start [container-id OR container_name]
 ```
-Starting a previously stopped container with specified id or name.
+Starting a previously stopped container with a specified id or name.
   
 <br/>
 
 ```
 docker stop [container-id OR container_name]
 ```
-Stopping a running container with specified id or name.
+Stopping a running container with a specified id or name.
 
 <br/>
 
@@ -99,8 +99,8 @@ This will remove all custom networks not used by at least one container.
 |||-it: interactive mode|
 |8|docker network ls| List all available networks in docker |
 |9|docker network create [network-name]| creating a new network named “network-name” |
-|10|docker network connect [network-name] [container-name OR container-id] | Assigning a network to an existing container **NOTE:** you can assign a network directly to an container when first run it using the following command: docker run --network [network-name] [image-name]|
-|11|docker build -t [new-img-name]:[tag] .| Building a new docker image based on the Dockerfile founded in the current directory |
+|10|docker network connect [network-name] [container-name OR container-id] | Assigning a network to an existing container **NOTE:** you can assign a network directly to a container when first running it using the following command: docker run --network [network-name] [image-name]|
+|11|docker build -t [new-img-name]:[tag] .| Building a new Docker image based on the Dockerfile found in the current directory |
 
 ## docker composer commands
 |#|Command|Description|
@@ -128,9 +128,9 @@ docker pull python
 ```
 - Running a container from the pulled image:
 ```
-docker run -d -t --name running-python -v ~/selected-volume:/usr/src/app python
+docker run -d -t -p 8000:8000 --name running-python -v ~/selected-volume:/usr/src/app python
 ```
-In the previous command, I named the running container "running-python", and mount the directory "/usr/src/app" (from the running container) on "~/selected-volume" (from the host machine)
+In the previous command, I named the running container "running-python", and mounted the directory "/usr/src/app" (from the running container) on "~/selected-volume" (from the host machine)
 
 - From the docker desktop app, you can click the running container, and then go to the terminal tab to execute commands interactively.
 
