@@ -47,69 +47,12 @@ sudo usermod -aG docker husam
 
 <br/>
 
-**NOTE:** I advice to reboot the server at this point.
+**NOTE:** I advise to reboot the server at this point.
 
 <br/>
 
-## Using the docker compose to build the environment
-- The following script will create three container (in one virtual network): 
-    - Nginx proxy manager. 
-    - Mariadb database server (required by Nginx proxy manager).
-    - Remotely app. 
-- Please **change critical information like passwords to be more complicated**.
+## A guide to how to install the Nginx Proxy Manager
 
-- Copy the content of the following code to a file with the name: **docker-compose.yml**
-```
-version: "3"
-services:
-  app:
-    image: 'jc21/nginx-proxy-manager:latest'
-    restart: unless-stopped
-    ports:
-      # These ports are in format <host-port>:<container-port>
-      - '80:80' # Public HTTP Port
-      - '443:443' # Public HTTPS Port
-      - '81:81' # Admin Web Port
-      # Add any other Stream port you want to expose
-      # - '21:21' # FTP
-    environment:
-      DB_MYSQL_HOST: "db"
-      DB_MYSQL_PORT: 3306
-      DB_MYSQL_USER: "npm"
-      DB_MYSQL_PASSWORD: "npm"
-      DB_MYSQL_NAME: "npm"
-      # Uncomment this if IPv6 is not enabled on your host
-      DISABLE_IPV6: 'true'
-    volumes:
-      - ./data:/data
-      - ./letsencrypt:/etc/letsencrypt
-    depends_on:
-      - db
+https://nginxproxymanager.com/guide/#hosting-your-home-network
 
-  db:
-    image: 'jc21/mariadb-aria:latest'
-    restart: unless-stopped
-    environment:
-      MYSQL_ROOT_PASSWORD: 'npm'
-      MYSQL_DATABASE: 'npm'
-      MYSQL_USER: 'npm'
-      MYSQL_PASSWORD: 'npm'
-    volumes:
-      - ./data/mysql:/var/lib/mysql
-
-  remotely:
-    image: immybot/remotely
-    restart: unless-stopped
-    ports:
-      - '5000:5000'
-    volumes:
-      - /var/www/remotely:/remotely-data
-```
-
-Use the following command to build the environment (**pay attention to run this command in the same folder as the docker-compose.yml file exist**):
-```
-docker-compose up -d
-```
-
-<br/>
 
