@@ -25,4 +25,4 @@ django-admin startup [app-name]
 python manage.py runserver 0.0.0.0:8000 
 ```
 
-**Note:** this command should be executed in the project's folder.
+**Note:** This command should be executed in the project's folder.
