@@ -1,5 +1,5 @@
 # Docker Commands & Notes
-Common Docker commands and notes
+Common Docker commands and notes.
 
 ## docker commands
 ```
