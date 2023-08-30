@@ -1,6 +1,6 @@
 # Linux Commands
 
-## Adding an exampleusername to a group: examplegroup
+## Adding an exampleusername to a group: examplegroup.
 ```
 sudo usermod -a -G examplegroup exampleusername 
 ```
