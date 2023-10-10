@@ -1,5 +1,7 @@
 # PM2 Notes
 
+npm install pm2@latest -g
+
 ## IMPORTANT
 
 Ensure when you use the pm2 start command to execute it in the same location as the .env file is.
